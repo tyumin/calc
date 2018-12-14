@@ -1,8 +1,28 @@
 'use strict';
 
-main: for(var i=2; i<=100; i++){
-  for(var j=2; j<i; j++){
-    if(!(i % j)) continue main;
-    }
-  alert(i);
+function g(a,b){
+  return a+b;
 }
+
+alert(g);
+
+function fib1(n) {
+  //alert(n);
+  if(n <= 2) return 1;
+  return fib1(n-1) + fib1(n-2);
+}
+
+function fib(n){
+  var prev = 0;
+  var result = 1;
+  for (var i = 1; i < n; i++) {
+    // alert('prev - ' + prev + ' result - ' + result) ;
+    var tmp = result;
+    result = result + prev;
+    prev = tmp;
+    // alert('result - ' + result);
+  }
+  return result;
+}
+
+// alert( fib(77) ); // (*)
