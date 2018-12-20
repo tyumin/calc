@@ -1,20 +1,18 @@
 'use strict';
 
-function getMaxSubSum(array){
-  var max = 0;
-  var sum = 0;
-  for (var i = 0; i < array.length; i++) {
-    if (array[i] + sum > 0 ) {
-      sum += array[i];
-      if (max < sum) {
-        max = sum;
-      }
-    }
+var obj = {
+  className: 'open menu'
+};
+
+// removeClass(obj, 'menu'); // obj.className='menu'
+removeClass(obj, 'open'); // без изменений (нет такого класса)
+
+
+function removeClass(obj, cls){
+  var classes = obj.className.split(' ');
+  while (~classes.indexOf(cls)) {
+    classes.splice(classes.indexOf(cls), 1);
   }
-  return max;
+  obj.className = classes.join(' ');
+  alert(obj.className);
 }
-
-
-
-alert(getMaxSubSum([-1, 2, 3, -9, 11]));
-// alert(getMaxSubSum([1, 2, 3]));
